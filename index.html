@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>MovieDB</h1>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search movies..." id="search-input">
+                <button id="search-button">Search</button>
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="movie-container">
+        <!-- Movie posters will be dynamically added here -->
+    </div>
+    <!-- Add a "Load More" button -->
+    <button id="load-more">Load More</button>
+
+    <div class="modal" id="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
