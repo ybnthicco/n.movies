@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="movie-details.css">
+    <title>Movie Details</title>
+</head>
+<body>
+    <header class="header" style="display: none;">
+        <nav class="navbar">
+            <a href="#" class="logo">MovieDB</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main">
+        <section class="movie-details">
+            <div class="movie-poster">
+                <img src="" alt="Movie Title" id="movie-poster">
+            </div>
+            <div class="movie-info">
+                <h1 class="movie-title" id="movie-title">Movie Title</h1>
+                <p class="movie-release-date" id="movie-release-date">Release Date: January 1, 2023</p>
+                <p class="movie-overview" id="movie-overview">Movie overview goes here...</p>
+            <!-- </div> -->
+            <div class="video-player">
+                <div class="iframe-container">
+                    <iframe
+                        width="100%"
+                        height="315"
+                        id="movie-video"
+                        frameborder="0"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+        </section>        
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">MovieDB</div>
+            <div class="social-links">
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to set the video source
+            function setVideoSource(movieId) {
+                const videoPlayer = document.getElementById("movie-video");
+                videoPlayer.src = `https://vidsrc.to/embed/movie/${movieId}?autoplay=1`; /* Add autoplay=1 to the URL */
+            }
+    
+            // Example: Get the movie ID from a URL parameter (replace with your method)
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieId = urlParams.get("movieId");
+    
+            if (movieId) {
+                // Call the function to set the video source
+                setVideoSource(movieId);
+            }
+        });
+    </script>
+    <script src="./movie-details.js"></script>
+</body>
+</html>
